@@ -1,0 +1,7 @@
+{{ define "main" }}
+<section class="ui-grid ui-grid-card">
+  {{ range where .Site.RegularPages.ByPublishDate.Reverse "Type" "in" "cetak" }}
+    {{- partial "card.html" . -}}
+  {{ end }}
+</section>
+{{ end }}

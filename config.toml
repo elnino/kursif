@@ -1,0 +1,29 @@
+title        = "Kursif"
+baseURL      = "https://kursif.com/"
+languageCode = "en-us"
+theme        = "kursif"
+themesDir    = "themes"
+assetDir     = "themes/kursif/static"
+publishDir   = "docs"
+
+defaultContentLanguage     = "id"
+enableRobotsTXT            = true
+disableRSS                 = true
+disableHugoGeneratorInject = true
+disableKinds               = ["taxonomy", "taxonomyTerm", "RSS"]
+
+googleAnalytics = "UA-145441322-7"
+
+[permalinks]
+  posts = "/:title"
+
+[related]
+  threshold = 0 
+  includeNewer = true
+  toLower = false
+  [[related.indices]]
+    name = "categories"
+    weight = 100
+  [[related.indices]]
+    name = "date"
+    weight = 10

@@ -1,0 +1,4 @@
+<a href="{{ .Permalink }}" role="link" aria-label="{{ .Title | safeHTML }}" class="ui-card">
+  <img src="/foto/kecil/cetak-kemasan.png" data-echo="/foto/kecil/{{ .Params.imgs }}" alt="{{ .Title | safeHTML }}">
+  <p class="ui-card-label">{{ replace .Title "Cetak" "" | safeHTML }}</p>
+</a>

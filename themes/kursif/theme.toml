@@ -1,0 +1,12 @@
+name        = "Kursif"
+license     = "Kursif"
+licenselink = "https://github.com/elnino/kursif/blob/master/LICENSE"
+description = "Desain website Kursif."
+homepage    = "https://github.com/elnino/kursif"
+tags        = []
+features    = []
+min_version = "0.74.3"
+
+[author]
+  name     = "Kursif"
+  homepage = "https://kursif.com"

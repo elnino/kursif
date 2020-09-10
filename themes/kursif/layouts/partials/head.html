@@ -1,0 +1,54 @@
+<head>
+  <!-- CSS -->
+  {{ $styleCSS  := resources.Get "/css/style.css" | minify }}
+  {{ $cardCSS   := resources.Get "/css/card.css" | minify }}
+  {{ $headerCSS := resources.Get "/css/header.css" | minify }}
+  {{ $footerCSS := resources.Get "/css/footer.css" | minify }}
+  <!-- Page -->
+  {{ $baseofCSS := resources.Get "/css/baseof.css" | minify }}
+  {{ $singleCSS := resources.Get "/css/single.css" | minify }}
+  <!-- Concat -->
+  {{ $indexCSS := slice $styleCSS $headerCSS $baseofCSS $footerCSS | resources.Concat "/css/index.css" | minify }}
+  {{ $cetakCSS := slice $styleCSS $headerCSS $cardCSS $footerCSS | resources.Concat "/css/cetak.css" | minify }}
+  {{ $orderCSS := slice $styleCSS $headerCSS $singleCSS $cardCSS $footerCSS | resources.Concat "/css/order.css" | minify }}
+  <!-- Meta -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Kursif">
+  <meta name="description" content="{{ .Params.desc | safeHTML }}">
+  <meta name="referrer" content="unsafe-url">
+  <meta name="robots" content="index, follow">
+  <!-- Speed -->
+  <link rel="preconnect" href="https://d33wubrfki0l68.cloudfront.net">
+  <link rel="dns-prefetch" href="https://d33wubrfki0l68.cloudfront.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="dns-prefetch" href="https://www.google-analytics.com">
+  <!-- Link -->
+  <link rel="me" href="mailto:halo@kursif.com">
+  <link rel="canonical" href="{{ .Permalink }}">
+  <link rel="icon" type="image/png" href="/icon/favicon.png" sizes="48x48">
+  <!-- Performance -->
+  <link rel="preload" as="script" href="/js/script.min.js">
+  {{ if .IsHome }}
+  <link rel="preload" as="style" href="{{ $indexCSS.Permalink }}">
+  <link rel="prefetch" as="style" href="{{ $cetakCSS.Permalink }}">
+  <link rel="prefetch" as="style" href="{{ $orderCSS.Permalink }}">
+  <link rel="stylesheet" href="{{ $indexCSS.Permalink }}">
+  {{ else if eq .RelPermalink "/cetak/" }}
+  <link rel="preload" as="style" href="{{ $cetakCSS.Permalink }}">
+  <link rel="prefetch" as="style" href="{{ $indexCSS.Permalink }}">
+  <link rel="prefetch" as="style" href="{{ $orderCSS.Permalink }}">
+  <link rel="stylesheet" href="{{ $cetakCSS.Permalink }}">
+  {{ else }}
+  <link rel="preload" as="style" href="{{ $orderCSS.Permalink }}">
+  <link rel="prefetch" as="style" href="{{ $indexCSS.Permalink }}">
+  <link rel="prefetch" as="style" href="{{ $cetakCSS.Permalink }}">
+  <link rel="stylesheet" href="{{ $orderCSS.Permalink }}">
+  {{ end }}
+  <!-- Title -->
+  <title>{{ if .IsHome }}Kursif&colon; {{ .Title | safeHTML }}{{ else }}{{ .Title | safeHTML }} &mdash; Kursif{{ end }}</title>
+</head>

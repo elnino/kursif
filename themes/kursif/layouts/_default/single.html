@@ -1,0 +1,42 @@
+{{ define "main" }}
+<section class="ui-grid ui-grid-product" style="background-color: #f5f5f5;">
+  <img src="/foto/besar/cetak-kemasan.png" data-echo="/foto/besar/{{ .Params.imgl }}" role="img" alt="Cetak {{ .Title | safeHTML }}" class="ui-img-product">
+  <div class="ui-product">
+    <div class="ui-grid ui-grid-tabs">
+      <div>
+        <h1>{{ .Title | safeHTML }}</h1>
+        <p class="ui-product-note">Minimum order {{ .Params.moq | safeHTML }} pcs.</p>
+      </div>
+      <a href="https://wa.me/6281215276715?text=Halo%2C%20Kursif%21%20Saya%20mau%20pesan{{ replace .Title "Cetak" "" | lower | safeHTML }}%2E" role="link" aria-label="{{ .Title | safeHTML }}" target="_blank" rel="noopener nofollow noreferrer" class="ui-button ui-button-secondary">Pesan</a>
+    </div>
+    <div class="ui-grid ui-product-feature">
+      <div class="ui-grid ui-product-feature-list">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="black" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        <p>Cetak {{ .Params.color | safeHTML }}</p>
+      </div>
+      <div class="ui-grid ui-product-feature-list">
+        <svg viewBox="0 0 24 24" width="16" height="16" stroke="black" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+        <p>{{ .Params.days | safeHTML }} Hari Kerja</p>
+      </div>
+    </div>
+    {{ if isset .Params "pack" }}
+    <p>Cetak {{ replace .Title "Cetak" "" | lower | safeHTML }} food grade untuk kemasan {{ index .Params "pack" | safeHTML }} dll. Kemasan dicetak sesuai desain Anda, menggunakan bahan eco friendly dan tinta soy-based ink.</p>
+    {{ else }}
+    <p>{{ .Params.info | safeHTML }}</p>
+    {{ end }}
+    {{ .Content }}
+    <a href="https://wa.me/6281215276715?text=Halo%2C%20Kursif%21%20Saya%20mau%20pesan{{ replace .Title "Cetak" "" | lower | safeHTML }}%2E" role="link" aria-label="{{ .Title | safeHTML }}" target="_blank" rel="noopener nofollow noreferrer" class="ui-button ui-button-primary">Pesan {{ replace .Title "Cetak" "" | safeHTML }}</a>
+  </div>
+</section>
+<a href="/cetak/" role="link" aria-label="Cetak Kemasan Makanan dan Minuman" class="ui-wrap ui-grid ui-grid-tabs ui-tabs">
+  <span>Kemasan Lainnya</span>
+  <svg viewBox="0 0 24 24" width="14" height="14" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+<section class="ui-grid ui-grid-card">
+  {{ with (where (.Site.RegularPages.Related .) "Type" "in" "cetak") | shuffle | first 4 }}
+    {{ range . }}
+      {{- partial "card.html" . -}}
+    {{ end }}
+  {{ end }}
+</section>
+{{ end }}

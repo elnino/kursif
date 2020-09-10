@@ -1,0 +1,33 @@
+<footer role="contentinfo" class="ui-wrap ui-grid ui-grid-footer">
+  <p class="ui-copyright">&copy; 2020 Kursif<br>Web desain Kursif</p>
+  <img src="/icon/bca.svg" alt="Logo Bank BCA" class="ui-icon-payment">
+  <img src="/icon/bni.svg" alt="Logo Bank BNI" class="ui-icon-payment">
+</footer>
+
+<!-- JS Files -->
+{{ $echoJS  := resources.Get "/js/echo.js" | minify }}
+{{ $fontJS  := resources.Get "/js/font.js" | minify }}
+
+<!-- Concat JS -->
+{{ $scriptJS  := slice $echoJS $fontJS | resources.Concat "/js/script.js" | minify }}
+
+<!-- Defer JS -->
+<script async>
+  function deferJS() {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src   = "{{ $scriptJS.Permalink }}";
+    document.body.appendChild(script);
+  }
+  
+  if ( window.addEventListener ) {
+    window.addEventListener("load", deferJS, false);
+  } else if ( window.attachEvent ) {
+    window.attachEvent("onload", deferJS);
+  } else {
+    window.onload = deferJS;
+  }
+</script>
+
+<!-- Google Analytics -->
+{{ template "_internal/google_analytics_async.html" . }}
