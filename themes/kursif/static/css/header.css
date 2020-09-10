@@ -12,6 +12,7 @@ TABLE OF CONTENT
 --------------------------------------------------------------*/
 
 .ui-grid-header {
+  align-items: center;
   grid-gap: var(--ui-gap);
   grid-template-columns: 1fr repeat(3, auto);
   position: relative;
@@ -23,12 +24,9 @@ TABLE OF CONTENT
 |
 --------------------------------------------------------------*/
 
-.ui-logo {
-  font-weight: 700;
-  line-height: 1;
-  margin-right: auto;
-  text-transform: uppercase;
-}
+.ui-logo { margin-right: auto; }
+
+.ui-icon-logo { height: .875rem; }
 
 /*--------------------------------------------------------------
 2.0 MEDIA
@@ -41,6 +39,8 @@ TABLE OF CONTENT
 --------------------------------------------------------------*/
 
 @media screen and (min-width: 22.5rem) {
+
+  .ui-icon-logo { height: 1rem; }
   
   .ui-icon-social { height: 1.125rem; }
   
