@@ -1,8 +1,8 @@
 ---
 title: Cetak Standing Pouch
-moq  : 1&period;000
+moq  : 500
 color: Full Color
-days : 21&ndash;28
+days : 14&ndash;21
 pack : camilan&comma; cookies&comma;
 desc : >-
        Cetak standing pouch food grade untuk kemasan
@@ -15,7 +15,9 @@ date : 2020-09-10T08:05:00+07:00
 
 UKURAN           | BANYAK    | HARGA
 ---------------- | --------- | -----------
-10 &times; 15 cm | 2.000 pcs | Rp1.550/pcs
-12 &times; 18 cm | 1.500 pcs | Rp1.850/pcs
-12 &times; 20 cm | 1.500 pcs | Rp1.950/pcs
-15 &times; 24 cm | 1.000 pcs | Rp2.450/pcs
+10 &times; 15 cm | 500 pcs   | Rp2.200/pcs
+10 &times; 15 cm | 1.000 pcs | Rp1.650/pcs
+12 &times; 18 cm | 500 pcs   | Rp2.300/pcs
+12 &times; 18 cm | 1.000 pcs | Rp1.750/pcs
+15 &times; 23 cm | 500 pcs   | Rp2.600/pcs
+15 &times; 23 cm | 1.000 pcs | Rp2.000/pcs

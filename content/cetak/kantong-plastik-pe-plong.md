@@ -1,6 +1,6 @@
 ---
 title: Cetak Plastik Plong
-moq  : 2&period;000
+moq  : 1&period;000
 color: 1 Warna
 days : 5&ndash;7
 pack : roti&comma; kue&comma; snack&comma;
@@ -15,6 +15,6 @@ date : 2020-09-10T08:09:00+07:00
 
 UKURAN           | BANYAK    | HARGA
 ---------------- | --------- | -----------
-25 &times; 35 cm | 2.000 pcs | Rp1.000/pcs
-35 &times; 45 cm | 2.000 pcs | Rp1.450/pcs
-45 &times; 55 cm | 2.000 pcs | Rp1.800/pcs
+25 &times; 35 cm | 1.000 pcs | Rp1.200/pcs
+35 &times; 45 cm | 1.000 pcs | Rp1.600/pcs
+45 &times; 55 cm | 1.000 pcs | Rp2.000/pcs
