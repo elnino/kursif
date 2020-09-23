@@ -26,7 +26,7 @@ TABLE OF CONTENT
 
 .ui-logo { margin-right: auto; }
 
-.ui-icon-logo { height: .875rem; }
+.ui-icon-logo { height: 1rem; }
 
 /*--------------------------------------------------------------
 2.0 MEDIA
@@ -40,8 +40,7 @@ TABLE OF CONTENT
 
 @media screen and (min-width: 22.5rem) {
 
-  .ui-icon-logo { height: 1rem; }
-  
+  .ui-icon-logo,
   .ui-icon-social { height: 1.125rem; }
   
 }
