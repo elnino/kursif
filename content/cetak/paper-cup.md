@@ -15,5 +15,7 @@ date : 2020-09-10T08:14:00+07:00
 
 UKURAN | BANYAK    | HARGA
 ------ | --------- | ---------
-8 oz   | 3.000 pcs | Rp875/pcs
-12 oz  | 3.000 pcs | Rp975/pcs
+8 oz   | 3.000 pcs | Rp850/pcs
+8 oz   | 5.000 pcs | Rp800/pcs
+12 oz  | 3.000 pcs | Rp950/pcs
+12 oz  | 5.000 pcs | Rp900/pcs

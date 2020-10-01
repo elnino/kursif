@@ -16,5 +16,8 @@ date : 2020-09-10T08:15:00+07:00
 UKURAN   | BANYAK    | HARGA
 -------- | --------- | -----------
 650 ml   | 2.000 pcs | Rp1.700/pcs
+650 ml   | 5.000 pcs | Rp1.500/pcs
 800 ml   | 2.000 pcs | Rp1.900/pcs
+800 ml   | 5.000 pcs | Rp1.700/pcs
 1.000 ml | 2.000 pcs | Rp2.100/pcs
+1.000 ml | 5.000 pcs | Rp1.900/pcs

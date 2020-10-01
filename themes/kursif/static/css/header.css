@@ -3,8 +3,10 @@ TABLE OF CONTENT
 ----------------------------------------------------------------
 1.0 HEADER
 |  1.1 LOGO
+|  1.2 MENU
 2.0 MEDIA
 |  2.1 360PX
+|  2.2 768PX
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -13,9 +15,7 @@ TABLE OF CONTENT
 
 .ui-grid-header {
   align-items: center;
-  grid-gap: var(--ui-gap);
-  grid-template-columns: 1fr repeat(3, auto);
-  position: relative;
+  grid-template-columns: 1fr auto;
 }
 
 /*--------------------------------------------------------------
@@ -26,7 +26,81 @@ TABLE OF CONTENT
 
 .ui-logo { margin-right: auto; }
 
-.ui-icon-logo { height: 1rem; }
+.ui-logo-icon { height: 1rem; }
+
+/*--------------------------------------------------------------
+|
+| 1.2 MENU
+|
+--------------------------------------------------------------*/
+
+/* ICON */
+
+.ui-menu-icon {
+  cursor: pointer;
+  display: block;
+  height: 1.125rem;
+  padding-bottom: .25rem;
+  padding-top: .25rem;
+  position: relative;
+  width: 1.125rem;
+  z-index: 2;
+}
+
+.ui-menu-icon::before,
+.ui-menu-icon::after {
+  background-color: var(--ui-text-primary);
+  content: "";
+  height: .125rem;
+  left: 0;
+  position: absolute;
+  transition: transform 250ms ease;
+  width: 1.125rem;
+}
+
+.ui-menu-icon::before { top: .3125rem; }
+
+.ui-menu-icon::after { top: .6875rem; }
+
+.ui-menu-icon-open::before {
+  transform: translateY(.1875rem) rotate(135deg);
+}
+
+.ui-menu-icon-open::after {
+  transform: translateY(-.1875rem) rotate(45deg);
+}
+
+/* MENU */
+
+.ui-menu {
+  background-color: white;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .05);
+  height: 100%;
+  opacity: 0;
+  padding: 4rem var(--ui-wrap) var(--ui-wrap);
+  position: fixed;
+  right: -100%;
+  top: 0;
+  transition: all 250ms ease;
+  visibility: hidden;
+  width: calc(100% - 4rem);
+  z-index: 1;
+}
+
+.ui-menu-open {
+  opacity: 1;
+  right: 0;
+  visibility: visible;
+}
+
+/* LINK */
+
+.ui-menu-link {
+  display: block;
+  font-size: var(--ui-typography-h2);
+  font-weight: 700;
+  line-height: 1;
+}
 
 /*--------------------------------------------------------------
 2.0 MEDIA
@@ -40,7 +114,30 @@ TABLE OF CONTENT
 
 @media screen and (min-width: 22.5rem) {
 
-  .ui-icon-logo,
-  .ui-icon-social { height: 1.125rem; }
+  .ui-logo-icon { height: 1.125rem; }
   
+}
+
+/*--------------------------------------------------------------
+|
+| 2.2 768PX
+|
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 48rem) {
+
+  .ui-menu-icon { display: none; }
+
+  .ui-menu {
+    box-shadow: none;
+    height: auto;
+    opacity: 1;
+    padding: 0;
+    position: static;
+    visibility: visible;
+    width: auto;
+  }
+
+  .ui-menu-link { font-size: var(--ui-typography-p); }
+
 }

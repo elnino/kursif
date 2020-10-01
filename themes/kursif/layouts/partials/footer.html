@@ -1,15 +1,25 @@
 <footer role="contentinfo" class="ui-wrap ui-grid ui-grid-footer">
   <p class="ui-copyright">&copy; 2020 Kursif<br>Web desain Kursif</p>
-  <img src="/ikon/bca.svg" alt="Logo Bank BCA" class="ui-icon-payment">
-  <img src="/ikon/bni.svg" alt="Logo Bank BNI" class="ui-icon-payment">
+  <nav class="ui-grid ui-grid-social">
+    <a href="https://wa.me/6281215276715?text=Halo%2C%20Kursif%21%20Saya%20mau%20tanya%2E" role="link" aria-label="Hubungi kami melalui WhatsApp." target="_blank" rel="noopener nofollow noreferrer" class="ui-social-link">
+      <img src="/ikon/whatsapp.svg" alt="WhatsApp" class="ui-social-icon">
+    </a>
+    <a href="https://instagram.com/kursif" role="link" aria-label="Follow kami di Instagram." target="_blank" rel="noopener nofollow noreferrer" class="ui-social-link">
+      <img src="/ikon/instagram.svg" alt="Instagram" class="ui-social-icon">
+    </a>
+    <a href="mailto:halo@kursif.com" role="link" aria-label="Hubungi kami melalui email." class="ui-social-link">
+      <img src="/ikon/email.svg" alt="Email" class="ui-social-icon">
+    </a>
+  </nav>
 </footer>
 
 <!-- JS Files -->
-{{ $echoJS  := resources.Get "/js/echo.js" | minify }}
-{{ $fontJS  := resources.Get "/js/font.js" | minify }}
+{{ $echoJS := resources.Get "/js/echo.js" | minify }}
+{{ $fontJS := resources.Get "/js/font.js" | minify }}
+{{ $menuJS := resources.Get "/js/menu.js" | minify }}
 
 <!-- Concat JS -->
-{{ $scriptJS  := slice $echoJS $fontJS | resources.Concat "/js/script.js" | minify }}
+{{ $scriptJS  := slice $echoJS $fontJS $menuJS | resources.Concat "/js/script.js" | minify }}
 
 <!-- Defer JS -->
 <script async>
